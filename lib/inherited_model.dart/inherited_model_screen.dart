@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utility/extensions.dart';
+import '../utility/nonui_extensions.dart' show RandomeElement;
 import 'available_colors_widget.dart';
 import 'color_widget.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utility/extensions.dart' show Log;
+import '../utility/nonui_extensions.dart' show Log;
 
 enum AvailableColors { one, two }
 

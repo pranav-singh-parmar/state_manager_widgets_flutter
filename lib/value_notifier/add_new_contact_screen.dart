@@ -40,7 +40,7 @@ class _NewContactScreenState extends State<NewContactScreen> {
                 ContactBook().add(contact: contact);
                 Navigator.of(context).pop();
               },
-              child: Text(""))
+              child: Text("Add"))
         ],
       ),
     );
