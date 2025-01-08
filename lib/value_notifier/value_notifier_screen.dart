@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'add_new_contact_screen.dart';
 import 'contact_book.dart';
 
-class ChangeNotifierScreen extends StatelessWidget {
-  const ChangeNotifierScreen({super.key});
+class ValueNotifierScreen extends StatelessWidget {
+  const ValueNotifierScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
