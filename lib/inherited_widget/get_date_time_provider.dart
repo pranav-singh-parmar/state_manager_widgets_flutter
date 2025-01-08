@@ -7,8 +7,11 @@ class GetDateTimeProvider extends InheritedWidget {
   final GetDateTime provider;
   final String uuid;
 
-  GetDateTimeProvider({super.key, required this.provider, required super.child})
-      : uuid = Uuid().v4();
+  GetDateTimeProvider({
+    super.key,
+    required this.provider,
+    required super.child,
+  }) : uuid = Uuid().v4();
 
   @override
   bool updateShouldNotify(covariant GetDateTimeProvider oldWidget) =>

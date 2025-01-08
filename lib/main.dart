@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'change_notifier/change_notifier_screen.dart';
+import 'inherited_model.dart/inherited_model_screen.dart';
 import 'inherited_widget/get_date_time.dart';
 import 'inherited_widget/get_date_time_provider.dart';
 import 'inherited_widget/inherited_widget_screen.dart';
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         // home: const ChangeNotifierScreen(),
-        home: GetDateTimeProvider(
-          provider: GetDateTime(),
-          child: InheritedWidgetScreen(),
-        ));
+        // home: GetDateTimeProvider(
+        //   provider: GetDateTime(),
+        //   child: InheritedWidgetScreen(),
+        // )
+        home: InheritedModelScreen());
   }
 }
