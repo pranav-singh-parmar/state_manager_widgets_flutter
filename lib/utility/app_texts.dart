@@ -7,7 +7,7 @@ class AppTexts {
   //value_notifier_contact_list_screen
   static const valueNotifierContactList = "Value Notifier Contact List";
 
-  //value_notifier_add_new_contact_screen
+  //value_notifier_add_contact_screen
   static const valueNotifierAddContact = "Value Notifier Add Contact";
   static const addContact = "Add Contact";
 
@@ -23,4 +23,12 @@ class AppTexts {
 
   //hero_animation_second_screen
   static const providerExamplesList = "Provider Examples List";
+
+  //provider_bread_crumb_list_screen
+  static const providerBreadCrumbList = "Provider Bread Crumb List";
+  static const addNewBreadCrumb = "Add New Bread Crumb";
+  static const reset = "Reset";
+
+  //provider_add_bread_crumb_screen
+  static const providerAddBreadCrumb = "Provider Add Bread Crumb";
 }

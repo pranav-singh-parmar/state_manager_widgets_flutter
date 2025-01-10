@@ -5,9 +5,10 @@ import '../ui/screens/inherited_notifier_and_change_notifier/inherited_notifier_
 import '../ui/screens/inherited_widget/get_date_time.dart';
 import '../ui/screens/inherited_widget/get_date_time_provider.dart';
 import '../ui/screens/inherited_widget/inherited_widget_date_and_time_screen.dart';
-import '../ui/screens/provider_examples/bread_crumb_provider_screen.dart';
+import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/provider_add_bread_crumb_screen.dart';
+import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/provider_bread_crumb_list_screen.dart';
 import '../ui/screens/provider_examples/provider_example_list_screen.dart';
-import '../ui/screens/value_notifier/value_notifier_add_new_contact_screen.dart';
+import '../ui/screens/value_notifier/value_notifier_add_contact_screen.dart';
 import '../ui/screens/value_notifier/value_notifier_contact_list_screen.dart';
 import 'constants.dart' show NavigationEnum;
 
@@ -19,7 +20,7 @@ extension NavigationEnumExtension on NavigatorState {
         screen = const ValueNotifierListScreen();
         break;
       case NavigationEnum.valueNotifierNewContact:
-        screen = const ValueNotifierNewContactScreen();
+        screen = const ValueNotifierAddContactScreen();
         break;
       case NavigationEnum.inheritedWidgetDateAndTime:
         screen = GetDateTimeProvider(
@@ -36,8 +37,11 @@ extension NavigationEnumExtension on NavigatorState {
       case NavigationEnum.providerExamples:
         screen = ProviderExampleListScreen();
         break;
-      case NavigationEnum.breadCrumbProvider:
-        screen = const BreacCrumbProviderScreen();
+      case NavigationEnum.providerBreadCrumbList:
+        screen = const ProviderBreadCrumbListScreen();
+        break;
+      case NavigationEnum.providerAddBreadCrumb:
+        screen = const ProviderAddBreadCrumbScreen();
         break;
     }
 

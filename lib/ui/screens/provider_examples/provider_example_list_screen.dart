@@ -9,7 +9,7 @@ class ProviderExampleListScreen extends StatelessWidget {
   ProviderExampleListScreen({super.key});
 
   final List<NavigationEnum> _navigationList = [
-    NavigationEnum.valueNotifierContactList
+    NavigationEnum.providerBreadCrumbList
   ];
 
   @override
@@ -41,8 +41,8 @@ class ProviderExampleListScreen extends StatelessWidget {
 
   String getTitleFor(NavigationEnum navigationEnum) {
     switch (navigationEnum) {
-      case NavigationEnum.valueNotifierContactList:
-        return AppTexts.valueNotifierContactList;
+      case NavigationEnum.providerBreadCrumbList:
+        return AppTexts.providerBreadCrumbList;
       default:
         return "";
     }

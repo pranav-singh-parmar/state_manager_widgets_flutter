@@ -4,16 +4,16 @@ import '../../../utility/app_texts.dart';
 import 'contact_book.dart';
 import 'contact_model.dart';
 
-class ValueNotifierNewContactScreen extends StatefulWidget {
-  const ValueNotifierNewContactScreen({super.key});
+class ValueNotifierAddContactScreen extends StatefulWidget {
+  const ValueNotifierAddContactScreen({super.key});
 
   @override
-  State<ValueNotifierNewContactScreen> createState() =>
-      _ValueNotifierNewContactScreenState();
+  State<ValueNotifierAddContactScreen> createState() =>
+      _ValueNotifierAddContactScreenState();
 }
 
-class _ValueNotifierNewContactScreenState
-    extends State<ValueNotifierNewContactScreen> {
+class _ValueNotifierAddContactScreenState
+    extends State<ValueNotifierAddContactScreen> {
   late TextEditingController _nameTEC;
 
   @override
@@ -37,6 +37,7 @@ class _ValueNotifierNewContactScreenState
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextField(
             controller: _nameTEC,

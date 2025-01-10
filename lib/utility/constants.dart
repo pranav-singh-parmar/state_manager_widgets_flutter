@@ -5,5 +5,6 @@ enum NavigationEnum {
   inheritedModelColorUpdate,
   inheritedNotifier,
   providerExamples,
-  breadCrumbProvider
+  providerBreadCrumbList,
+  providerAddBreadCrumb
 }
