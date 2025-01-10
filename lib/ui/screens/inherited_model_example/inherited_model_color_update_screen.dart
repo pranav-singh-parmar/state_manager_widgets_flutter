@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../utility/nonui_extensions.dart' show RandomeElement;
+import '../../../utility/app_texts.dart';
+import '../../../utility/nonui_extensions.dart' show RandomeElement;
 import 'available_colors_widget.dart';
 import 'color_widget.dart';
 
-class InheritedModelScreen extends StatefulWidget {
-  const InheritedModelScreen({super.key});
+class InheritedModelColorUpdateScreen extends StatefulWidget {
+  const InheritedModelColorUpdateScreen({super.key});
 
   @override
-  State<InheritedModelScreen> createState() => _InheritedModelScreenState();
+  State<InheritedModelColorUpdateScreen> createState() =>
+      _InheritedModelColorUpdateScreenState();
 }
 
-class _InheritedModelScreenState extends State<InheritedModelScreen> {
+class _InheritedModelColorUpdateScreenState
+    extends State<InheritedModelColorUpdateScreen> {
   final colors = [
     Colors.green,
     Colors.blue,
@@ -30,7 +33,11 @@ class _InheritedModelScreenState extends State<InheritedModelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          AppTexts.inheritedModelColorUpdate,
+        ),
+      ),
       body: AvailableColorsWidget(
         color1: color1,
         color2: color2,

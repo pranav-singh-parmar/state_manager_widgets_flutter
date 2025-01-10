@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 
-import 'add_new_contact_screen.dart';
+import '../../../utility/app_texts.dart';
+import '../../../utility/constants.dart';
+import '../../../utility/navigation.dart';
 import 'contact_book.dart';
 
-class ValueNotifierScreen extends StatelessWidget {
-  const ValueNotifierScreen({super.key});
+class ValueNotifierListScreen extends StatelessWidget {
+  const ValueNotifierListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final contactBook = ContactBook();
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(
+            AppTexts.valueNotifierContactList,
+          ),
+        ),
         body: ValueListenableBuilder(
             valueListenable: contactBook,
             builder: (context, value, child) {
@@ -32,8 +38,8 @@ class ValueNotifierScreen extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => NewContactScreen()));
+            Navigator.of(context)
+                .navigateTo(NavigationEnum.valueNotifierNewContact);
           },
         ));
   }

@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../utility/ui_extensions.dart' show ExpandEqually;
+import '../../../utility/app_texts.dart';
+import '../../../utility/ui_extensions.dart' show ExpandEqually;
 import 'slider_data.dart';
 import 'slider_inherited_notifier.dart';
 
-class InheritedNotifierAndChangeNotifierScreen extends StatelessWidget {
-  InheritedNotifierAndChangeNotifierScreen({super.key});
+class InheritedNotifierAndChangeNotifierSliderScreen extends StatelessWidget {
+  InheritedNotifierAndChangeNotifierSliderScreen({super.key});
 
   final sliderData = SliderData();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          AppTexts.inheritedNotifierAndChangeNotifierSliderDcreen,
+        ),
+      ),
       body: SliderInheritedNotifier(
         sliderData: sliderData,
         child: Builder(

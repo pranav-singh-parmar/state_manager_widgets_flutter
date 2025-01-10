@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../utility/app_texts.dart';
 import 'contact_book.dart';
 import 'contact_model.dart';
 
-class NewContactScreen extends StatefulWidget {
-  const NewContactScreen({super.key});
+class ValueNotifierNewContactScreen extends StatefulWidget {
+  const ValueNotifierNewContactScreen({super.key});
 
   @override
-  State<NewContactScreen> createState() => _NewContactScreenState();
+  State<ValueNotifierNewContactScreen> createState() =>
+      _ValueNotifierNewContactScreenState();
 }
 
-class _NewContactScreenState extends State<NewContactScreen> {
+class _ValueNotifierNewContactScreenState
+    extends State<ValueNotifierNewContactScreen> {
   late TextEditingController _nameTEC;
 
   @override
@@ -28,7 +31,11 @@ class _NewContactScreenState extends State<NewContactScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          AppTexts.valueNotifierAddContact,
+        ),
+      ),
       body: Column(
         children: [
           TextField(
@@ -40,7 +47,9 @@ class _NewContactScreenState extends State<NewContactScreen> {
                 ContactBook().add(contact: contact);
                 Navigator.of(context).pop();
               },
-              child: Text("Add"))
+              child: Text(
+                AppTexts.addContact,
+              ))
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utility/nonui_extensions.dart' show Log;
+import '../../../utility/nonui_extensions.dart' show Log;
 import 'available_colors_widget.dart';
 
 class ColorWidget extends StatelessWidget {
