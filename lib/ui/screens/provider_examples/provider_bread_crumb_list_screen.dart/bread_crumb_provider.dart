@@ -16,6 +16,17 @@ class BreadCrumbProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void select({required BreadCrumb breadCrumb}) {
+    final int index = _items.indexOf(breadCrumb);
+
+    if (index != -1) {
+      // Keep only items from the target onward
+      _items.removeRange(index + 1, _items.length);
+    }
+    breadCrumb.deactivate();
+    notifyListeners();
+  }
+
   void reset() {
     _items.clear();
     notifyListeners();

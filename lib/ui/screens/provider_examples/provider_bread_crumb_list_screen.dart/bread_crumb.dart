@@ -17,6 +17,10 @@ class BreadCrumb {
     _isAcive = true;
   }
 
+  void deactivate() {
+    _isAcive = false;
+  }
+
   @override
   bool operator ==(covariant BreadCrumb other) => uuid == other.uuid;
 

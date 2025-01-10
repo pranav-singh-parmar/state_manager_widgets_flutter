@@ -22,12 +22,19 @@ class ProviderBreadCrumbListScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Consumer<BreadCrumbProvider>(
-            builder: (context, value, child) {
-              return BreadCrumbWidget(
-                breadCrumbs: value.items,
-              );
-            },
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Consumer<BreadCrumbProvider>(
+              builder: (context, value, child) {
+                return BreadCrumbWidget(
+                  breadCrumbs: value.items,
+                  onTap: (breadCrumb) {
+                    final provider = context.read<BreadCrumbProvider>();
+                    provider.select(breadCrumb: breadCrumb);
+                  },
+                );
+              },
+            ),
           ),
           //BreadCrumbWidget(breadCrumbs: []),
           ThemeElevatedButton(
