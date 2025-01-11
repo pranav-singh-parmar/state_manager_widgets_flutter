@@ -32,7 +32,6 @@ class ProviderExampleListScreen extends StatelessWidget {
     return Center(
       child: ThemeElevatedButton(
           onPressed: () {
-            // Navigator.push(context, route)
             Navigator.of(context).navigateTo(navigationEnum);
           },
           title: getTitleFor(navigationEnum)),

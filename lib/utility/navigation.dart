@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../ui/screens/inherited_model_example/inherited_model_color_update_screen.dart';
 import '../ui/screens/inherited_notifier_and_change_notifier/inherited_notifier_and_change_notifier_slider_screen.dart';
 import '../ui/screens/inherited_widget/get_date_time.dart';
 import '../ui/screens/inherited_widget/get_date_time_provider.dart';
 import '../ui/screens/inherited_widget/inherited_widget_date_and_time_screen.dart';
+import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/bread_crumb_provider.dart';
 import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/provider_add_bread_crumb_screen.dart';
 import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/provider_bread_crumb_list_screen.dart';
 import '../ui/screens/provider_examples/provider_example_list_screen.dart';
@@ -38,10 +40,21 @@ extension NavigationEnumExtension on NavigatorState {
         screen = ProviderExampleListScreen();
         break;
       case NavigationEnum.providerBreadCrumbList:
-        screen = const ProviderBreadCrumbListScreen();
+        screen = ChangeNotifierProvider(
+            create: (_) => BreadCrumbProvider(),
+            child: Builder(
+              builder: (context) => ProviderBreadCrumbListScreen(),
+            ));
         break;
       case NavigationEnum.providerAddBreadCrumb:
-        screen = const ProviderAddBreadCrumbScreen();
+        if (parameters is BreadCrumbProvider) {
+          screen = ChangeNotifierProvider.value(
+              value: parameters,
+              child: Builder(
+                builder: (context) => ProviderAddBreadCrumbScreen(),
+              ));
+        }
+
         break;
     }
 

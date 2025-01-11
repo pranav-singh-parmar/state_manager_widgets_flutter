@@ -19,37 +19,48 @@ class ProviderBreadCrumbListScreen extends StatelessWidget {
           AppTexts.providerBreadCrumbList,
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Consumer<BreadCrumbProvider>(
-              builder: (context, value, child) {
-                return BreadCrumbWidget(
-                  breadCrumbs: value.items,
-                  onTap: (breadCrumb) {
-                    final provider = context.read<BreadCrumbProvider>();
-                    provider.select(breadCrumb: breadCrumb);
-                  },
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Consumer<BreadCrumbProvider>(
+                builder: (context, value, child) {
+                  return BreadCrumbWidget(
+                    breadCrumbs: value.items,
+                    onTap: (breadCrumb) {
+                      final provider = context.read<BreadCrumbProvider>();
+                      provider.select(breadCrumb: breadCrumb);
+                    },
+                  );
+                },
+              ),
+            ),
+            //BreadCrumbWidget(breadCrumbs: []),
+            ThemeElevatedButton(
+              onPressed: () {
+                final provider = Provider.of<BreadCrumbProvider>(
+                  context,
+                  listen: false,
+                );
+                Navigator.of(context).navigateTo(
+                  NavigationEnum.providerAddBreadCrumb,
+                  parameters: provider,
                 );
               },
+              child: Text(AppTexts.addNewBreadCrumb),
             ),
-          ),
-          //BreadCrumbWidget(breadCrumbs: []),
-          ThemeElevatedButton(
-            onPressed: () => Navigator.of(context)
-                .navigateTo(NavigationEnum.providerAddBreadCrumb),
-            child: Text(AppTexts.addNewBreadCrumb),
-          ),
-          ThemeElevatedButton(
-            onPressed: () {
-              final provider = context.read<BreadCrumbProvider>();
-              provider.reset();
-            },
-            child: Text(AppTexts.reset),
-          ),
-        ],
+            ThemeElevatedButton(
+              onPressed: () {
+                final provider = context.read<BreadCrumbProvider>();
+                provider.reset();
+              },
+              child: Text(AppTexts.reset),
+            ),
+          ],
+        ),
       ),
     );
   }
