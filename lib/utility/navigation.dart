@@ -6,9 +6,10 @@ import '../ui/screens/inherited_notifier_and_change_notifier/inherited_notifier_
 import '../ui/screens/inherited_widget/get_date_time.dart';
 import '../ui/screens/inherited_widget/get_date_time_provider.dart';
 import '../ui/screens/inherited_widget/inherited_widget_date_and_time_screen.dart';
-import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/bread_crumb_provider.dart';
-import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/provider_add_bread_crumb_screen.dart';
-import '../ui/screens/provider_examples/provider_bread_crumb_list_screen.dart/provider_bread_crumb_list_screen.dart';
+import '../ui/screens/provider_examples/provider_bread_crumb_list_screen/bread_crumb_provider.dart';
+import '../ui/screens/provider_examples/provider_bread_crumb_list_screen/provider_add_bread_crumb_screen.dart';
+import '../ui/screens/provider_examples/provider_bread_crumb_list_screen/provider_bread_crumb_list_screen.dart';
+import '../ui/screens/provider_examples/provider_date_and_time_screen/provider_date_and_time_screen.dart';
 import '../ui/screens/provider_examples/provider_example_list_screen.dart';
 import '../ui/screens/value_notifier/value_notifier_add_contact_screen.dart';
 import '../ui/screens/value_notifier/value_notifier_contact_list_screen.dart';
@@ -54,7 +55,9 @@ extension NavigationEnumExtension on NavigatorState {
                 builder: (context) => ProviderAddBreadCrumbScreen(),
               ));
         }
-
+        break;
+      case NavigationEnum.providerDateAndTime:
+        screen = ProviderDateAndTimeScreen();
         break;
     }
 

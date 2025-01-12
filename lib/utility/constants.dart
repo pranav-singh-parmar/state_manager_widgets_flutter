@@ -6,5 +6,6 @@ enum NavigationEnum {
   inheritedNotifier,
   providerExamples,
   providerBreadCrumbList,
-  providerAddBreadCrumb
+  providerAddBreadCrumb,
+  providerDateAndTime
 }

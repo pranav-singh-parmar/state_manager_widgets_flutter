@@ -31,4 +31,7 @@ class AppTexts {
 
   //provider_add_bread_crumb_screen
   static const providerAddBreadCrumb = "Provider Add Bread Crumb";
+
+  //provider_date_and_time_screen
+  static const providerDateAndTime = "Provider date & time";
 }
