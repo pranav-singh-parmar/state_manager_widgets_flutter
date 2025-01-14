@@ -10,7 +10,8 @@ class ProviderExampleListScreen extends StatelessWidget {
 
   final List<NavigationEnum> _navigationList = [
     NavigationEnum.providerBreadCrumbList,
-    NavigationEnum.providerDateAndTime
+    NavigationEnum.providerDateAndTime,
+    NavigationEnum.multiProvider,
   ];
 
   @override
@@ -45,6 +46,8 @@ class ProviderExampleListScreen extends StatelessWidget {
         return AppTexts.providerBreadCrumbList;
       case NavigationEnum.providerDateAndTime:
         return AppTexts.providerDateAndTime;
+      case NavigationEnum.multiProvider:
+        return AppTexts.multiProvider;
       default:
         return "";
     }

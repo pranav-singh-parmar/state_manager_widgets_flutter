@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 @immutable
-class BaseDateAndTimeProvider {
+class BaseDateAndTimeClass {
   final String id;
   final String lastUpdated;
 
-  BaseDateAndTimeProvider()
+  BaseDateAndTimeClass()
       : id = Uuid().v4(),
         lastUpdated = DateTime.now().toString();
 
   @override
-  bool operator ==(covariant BaseDateAndTimeProvider other) => id == other.id;
+  bool operator ==(covariant BaseDateAndTimeClass other) => id == other.id;
 
   @override
   int get hashCode => id.hashCode;

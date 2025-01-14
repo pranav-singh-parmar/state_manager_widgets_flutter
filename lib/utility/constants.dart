@@ -7,5 +7,6 @@ enum NavigationEnum {
   providerExamples,
   providerBreadCrumbList,
   providerAddBreadCrumb,
-  providerDateAndTime
+  providerDateAndTime,
+  multiProvider,
 }

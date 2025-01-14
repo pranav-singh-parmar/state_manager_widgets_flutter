@@ -6,9 +6,13 @@ import '../ui/screens/inherited_notifier_and_change_notifier/inherited_notifier_
 import '../ui/screens/inherited_widget/get_date_time.dart';
 import '../ui/screens/inherited_widget/get_date_time_provider.dart';
 import '../ui/screens/inherited_widget/inherited_widget_date_and_time_screen.dart';
+import '../ui/screens/provider_examples/multi_provider_screen/minutes.dart';
+import '../ui/screens/provider_examples/multi_provider_screen/multi_provider_screen.dart';
+import '../ui/screens/provider_examples/multi_provider_screen/seconds.dart';
 import '../ui/screens/provider_examples/provider_bread_crumb_list_screen/bread_crumb_provider.dart';
 import '../ui/screens/provider_examples/provider_bread_crumb_list_screen/provider_add_bread_crumb_screen.dart';
 import '../ui/screens/provider_examples/provider_bread_crumb_list_screen/provider_bread_crumb_list_screen.dart';
+import '../ui/screens/provider_examples/provider_date_and_time_screen/provider_date_and_time.dart';
 import '../ui/screens/provider_examples/provider_date_and_time_screen/provider_date_and_time_screen.dart';
 import '../ui/screens/provider_examples/provider_example_list_screen.dart';
 import '../ui/screens/value_notifier/value_notifier_add_contact_screen.dart';
@@ -48,17 +52,40 @@ extension NavigationEnumExtension on NavigatorState {
             ));
         break;
       case NavigationEnum.providerAddBreadCrumb:
+        final providerAddBreadCrumb = ProviderAddBreadCrumbScreen();
         if (parameters is BreadCrumbProvider) {
           screen = ChangeNotifierProvider.value(
               value: parameters,
               child: Builder(
-                builder: (context) => ProviderAddBreadCrumbScreen(),
+                builder: (context) => providerAddBreadCrumb,
               ));
+        } else {
+          screen = providerAddBreadCrumb;
         }
         break;
       case NavigationEnum.providerDateAndTime:
-        screen = ProviderDateAndTimeScreen();
+        screen = ChangeNotifierProvider(
+            create: (_) => ProviderDateAndTime(),
+            child: ProviderDateAndTimeScreen());
         break;
+      case NavigationEnum.multiProvider:
+        screen = MultiProvider(
+          providers: [
+            StreamProvider.value(
+                value: Stream<Seconds>.periodic(
+                  const Duration(seconds: 1),
+                  (_) => Seconds(),
+                ),
+                initialData: Seconds()),
+            StreamProvider.value(
+                value: Stream<Minutes>.periodic(
+                  const Duration(seconds: 10),
+                  (_) => Minutes(),
+                ),
+                initialData: Minutes()),
+          ],
+          child: MultiProviderScreen(),
+        );
     }
 
     push(

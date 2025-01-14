@@ -34,4 +34,21 @@ class AppTexts {
 
   //provider_date_and_time_screen
   static const providerDateAndTime = "Provider date & time";
+  static const start = "Start";
+  static const stop = "Stop";
+
+  //expensive_widget
+  static const expensiveWidget = "Expensive Widget";
+  //cheap_widget
+  static const cheapWidget = "Cheap Widget";
+
+  //expensive_widget and cheap_widget
+  static const lastUpdated = "Last Updated";
+
+  //provider_date_and_time_widget
+  static const objectProvider = "Object Provier";
+  static const id = "ID";
+
+  //multi_provider_screen
+  static const multiProvider = "Multi Provider";
 }

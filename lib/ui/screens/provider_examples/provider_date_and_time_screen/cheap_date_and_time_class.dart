@@ -3,4 +3,4 @@ import 'package:flutter/material.dart';
 import 'base_date_and_time_class.dart';
 
 @immutable
-class ExpensiveDateAndTimeClass extends BaseDateAndTimeClass {}
+class CheapDateAndTimeClass extends BaseDateAndTimeClass {}
